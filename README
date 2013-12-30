@@ -1,0 +1,25 @@
+Copyright 2011-2013 Michael Kohler.
+
+This file is part of AllAroundScore.
+
+    AllAroundScore is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    AllAroundScore is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+
+The AllAroundScore application is an app for the Android platform that allows users to keep track of scores and videos for gymnastic meets. The app will keep track of scores for a team and individual gymnasts. Video for individual gymnasts for an event in a particular meet are managed from within the app.
+
+The AllAroundScore applicaiton was put to Git Hub in order to allow for further development of the freely available applicaiton on the Google Play Store. Users of this source must post changes back to Git so that a current version of the software can be updated on the Google Play Store. It will also help others contribute to a common open source project designed make AllAroundScore the best (and free) application around.
+
+
