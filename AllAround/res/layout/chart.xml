@@ -21,6 +21,7 @@ Version: 3.0
 Description: holds the components used to display charts and graphs
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/chart_piclayout"
@@ -36,7 +37,6 @@ Changes:
 		android:id="@+id/chart" 
 		android:orientation="horizontal"
 		android:layout_width="fill_parent" 
-		android:layout_height="wrap_content" 
+		android:layout_height= "0dip"
 		android:layout_weight="1" />
-	
 </LinearLayout>

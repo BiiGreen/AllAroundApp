@@ -21,6 +21,7 @@ Description:Data structure designed to hold data for a meet
 Holds: meet id, meet name, meet date, meet level, # of gymnasts and gymnasts names 
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 
 package com.biig.AllAround;

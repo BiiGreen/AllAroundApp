@@ -21,10 +21,13 @@ Description: Data structure for a gymnast for an event
 Holds: meet name, date, level, gymnast and scores
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 package com.biig.AllAround;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 
 public class Events {
@@ -43,14 +46,14 @@ public class Events {
 		this.gymnastName = gymnastName;
 		this.meetName = dbh.getMeetName(meetName);
 		String d = dbh.getMeetDate(meetName);
-		Date dt;
-	
-		try {
-			dt = new Date(d);
-		} catch (Exception e) {
-			dt = null;
+		Date dt = null;
+		try{
+			dt = new SimpleDateFormat("M/d/yyyy",Locale.ENGLISH).parse(d);
+		}catch(Exception e){
+			
 		}
-
+		
+		
 		this.meetDate = dt;
 		this.floor = floor;
 		this.vault = vault;

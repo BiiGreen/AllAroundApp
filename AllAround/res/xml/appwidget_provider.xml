@@ -21,6 +21,7 @@ Version: 3.0
 Description: a provider file used to configure and identify the widget.
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:minWidth="220dp"
@@ -29,4 +30,3 @@ Changes:
     android:initialLayout="@layout/appwidget_provider"
     android:configure="com.biig.AllAround.WidgetConfigure">
 </appwidget-provider>
-

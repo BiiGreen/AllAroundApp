@@ -20,6 +20,7 @@ Version: 3.0
 Description: Activity for managing Meet objects in the database
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 
 package com.biig.AllAround;
@@ -407,10 +408,10 @@ public class Meet extends Activity{
 					t5.setTextSize(24);
 					r.addView(t5);
 					
-					tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+					tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT ));
 				}
 				View v = new View(cntx);
-				v.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,2));
+				v.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,2));
 				v.setBackgroundColor(Color.BLACK);
 				tbl.addView(v);
 			}

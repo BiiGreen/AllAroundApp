@@ -20,6 +20,7 @@ Filename: alert_text_entry.xml
 Version: 3.0
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -36,7 +37,7 @@ Changes:
 	        android:layout_width="wrap_content"
 	        android:layout_marginLeft="20dip"
 	        android:layout_marginRight="20dip"
-	        android:text="Name"
+	        android:text="@string/nameString"
 	        android:gravity="center"
 	        android:textStyle="bold"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -46,7 +47,7 @@ Changes:
 	        android:layout_width="wrap_content"
 	        android:layout_marginLeft="20dip"
 	        android:layout_marginRight="20dip"
-	        android:text="Event"
+	        android:text="@string/eventString"
 	        android:gravity="center"
 	        android:textStyle="bold"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -57,7 +58,6 @@ Changes:
         android:layout_width="fill_parent"
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
-        android:autoText="false"
         android:inputType="numberDecimal"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 </LinearLayout>

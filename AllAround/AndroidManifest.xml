@@ -21,13 +21,23 @@ Version: 3.0
 Description: definition of the application
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.biig.android.AllAround"
       android:versionCode="10"
       android:versionName="2.1.2">
-    <application android:icon="@drawable/gymnast" android:label="@string/app_name">
+      
+    <uses-permission 
+		android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-sdk 
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    <application 
+        android:icon="@drawable/gymnast"
+        android:label="@string/app_name"
+        android:allowBackup="true">
         <activity android:name="com.biig.AllAround.AllAround"
                   android:label="@string/app_name"
                   android:configChanges="orientation">
@@ -120,21 +130,6 @@ Changes:
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
-        </activity>
-        
-        <activity android:name="com.biig.AllAround.Import"
-                  android:label="Import Data"
-                  android:configChanges="orientation"
-                  android:screenOrientation="landscape">
-        	<intent-filter>
-                <action android:name="android.intent.action.IMPORT" />
-            </intent-filter>
-		</activity>
-
+        </activity>	
     </application>
-    
-	<uses-permission 
-		android:name="android.permission.WRITE_EXTERNAL_STORAGE">
-	</uses-permission>
-    <uses-sdk android:minSdkVersion="8" />
 </manifest> 

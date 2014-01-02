@@ -21,6 +21,7 @@ Version: 3.0
 Description: contains the tools used to define a gymnast object
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/gymnast_piclayout"
@@ -53,7 +54,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Add"/>
+						android:text="@string/addString"/>
 				<Button android:id="@+id/gymnastAdd"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -72,7 +73,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Edit"/>
+						android:text="@string/editString"/>
 				<Button android:id="@+id/gymnastEdit"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -91,7 +92,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Delete"/>
+						android:text="@string/deleteString"/>
 				<Button android:id="@+id/gymnastDelete"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -110,7 +111,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Save"/>
+						android:text="@string/saveString"/>
 				<Button android:id="@+id/gymnastCommit"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -129,7 +130,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Exit"/>
+						android:text="@string/exitString"/>
 				<Button android:id="@+id/gymnastCancel"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -143,82 +144,77 @@ Changes:
 			android:layout_height="wrap_content">
 			<HorizontalScrollView
 				android:layout_width="fill_parent"
-				android:layout_height="fill_parent">
-				<LinearLayout
-					android:id="@+id/gymnastTxtBoxLayout"
-					android:layout_width="fill_parent" 
-					android:layout_height="wrap_content"
-					android:orientation="vertical" 
-					android:paddingTop="20sp">
+				android:layout_height="wrap_content">
 				
-					<TableLayout
-						android:id="@+id/gymnastTableLayout"
+				<TableLayout
+					android:id="@+id/gymnastTableLayout"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content">
+					<TableRow>
+						<TextView
+							android:id="@+id/gymnastIDtv"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/idString"/>
+						<TextView
+							android:id="@+id/gymnastFNtv"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/firstNameStringPipe"/>
+						<TextView
+							android:id="@+id/gymnastLNtv"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/lastNameStringPipe"/>
+						<TextView
+							android:id="@+id/gymnastLVtv"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/levelStringPipe"/>
+						<TextView
+							android:id="@+id/gymnastTGtv"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/targetStringPipe"/>
+					</TableRow>
+					<View
+						android:layout_height="2dp"
 						android:layout_width="fill_parent"
-						android:layout_height="wrap_content">
-						<TableRow>
-							<TextView
-								android:id="@+id/gymnastIDtv"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="ID  "/>
-							<TextView
-								android:id="@+id/gymnastFNtv"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="|First Name"/>
-							<TextView
-								android:id="@+id/gymnastLNtv"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="|Last Name"/>
-							<TextView
-								android:id="@+id/gymnastLVtv"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="|Level"/>
-							<TextView
-								android:id="@+id/gymnastTGtv"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="|Target"/>
-						</TableRow>
-						<View
-							android:layout_height="2dp"
-							android:layout_width="fill_parent"
-							android:background="@color/solid_black"/>
-					</TableLayout>
-				</LinearLayout>
+						android:background="@color/solid_black"/>
+				</TableLayout>
 			</HorizontalScrollView>
 		</ScrollView>
 		<EditText
 			android:id="@+id/gymnastFirstNameTxt"
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content" 
-			android:text="First Name"
+			android:text="@string/firstNameString"
+			android:inputType="text"
 			android:selectAllOnFocus="true"/>
 		<EditText
 			android:id="@+id/gymnastLastNameTxt"
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content" 
-			android:text="Last Name"
+			android:text="@string/lastNameString"
+			android:inputType="text"
 			android:selectAllOnFocus="true"/>
 		<EditText
 			android:id="@+id/gymnastLevelTxt"
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content" 
-			android:text="Enter Level"
+			android:text="@string/levelString"
 			android:selectAllOnFocus="true"
 			android:inputType="number"/>
 		<TextView  
 			android:id="@+id/gymnastTargetLbl"
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content" 
-			android:text="Enter Target Score"
+			android:text="@string/targetString"
 			android:gravity="center"
 			android:textColor="@color/solid_black"
 			android:textStyle="bold"
@@ -228,7 +224,7 @@ Changes:
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content"
 			android:inputType="numberDecimal" 
-			android:text="35.0"
+			android:text="@string/defaultTargetString"
 			android:selectAllOnFocus="true"/>
 	</LinearLayout>
 </LinearLayout>

@@ -15,14 +15,14 @@ This file is part of AllAroundScore.
     You should have received a copy of the GNU General Public License
     along with AllAroundScore.  If not, see <http://www.gnu.org/licenses/>.
 
-Filename: WidgetViedo.java
+Filename: WidgetScore.java
 Version: 3.0
-Description:  Activity designed to let user set a video for a gymnast 
+Description: Activity designed to let user set a video for a gymnast 
 using the widget for that widgets meet.
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
-
 package com.biig.AllAround;
 
 import android.app.Activity;

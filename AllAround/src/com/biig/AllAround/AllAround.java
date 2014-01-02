@@ -20,6 +20,7 @@ Version: 3.0
 Description: main code base for controlling the program flow and initialization
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 
 package com.biig.AllAround;
@@ -56,7 +57,6 @@ public class AllAround extends Activity {
 	//context and constants
 	private final Context cntx = AllAround.this;
 	private final static int DIALOG_DISCLAIMER=19;
-	private final static int DIALOG_SELECT=20;
 	
 	//User Interface
 	public Button btnMainMeet;
@@ -67,9 +67,6 @@ public class AllAround extends Activity {
 	
 	
 	private String selActivity="";
-	private final static String[] lstActivity = {"Main","Gymnast","Meet","Scores","Stats"};
-	private final static String[] dbActivity = {"main","gymnast","meet","score","stat"};
-//	private boolean setBk = true;
 	private DBHelper dbh = new DBHelper();
 	
 
@@ -130,7 +127,7 @@ public class AllAround extends Activity {
         DBHelper dbh = new DBHelper();
 		String p = dbh.getActivityBackground("main");
 		if (p!="nothing"){
-			d = new BitmapDrawable(p);
+			d = new BitmapDrawable(cntx.getResources(),p);
 			ll.setBackgroundDrawable(d);
 			ll.refreshDrawableState();
 		}else{
@@ -330,33 +327,7 @@ public class AllAround extends Activity {
     			}
     		})
     		.create();
-    		//dialog to select a single gymnast to edit
-	 	case DIALOG_SELECT:
-	 		
-        	return new AlertDialog.Builder(cntx)
-            .setIcon(R.drawable.gymnast_small)
-            .setTitle("Select Activity")
-            .setSingleChoiceItems(lstActivity, 0, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int whichButton) {
-                    	selActivity = dbActivity[whichButton];
-                }
-            })
-            .setPositiveButton("Select", new DialogInterface.OnClickListener() {
-            	public void onClick(DialogInterface dialog, int whichButton) {
-//            		if (setBk){
-//            			
-//            			setActivityBackground(selActivity);
-//            		}else{
-//            			dbh.removeActivityBackground(selActivity);
-//            		}
-                }
-            })
-            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            	public void onClick(DialogInterface dialog, int whichButton) {
-             }
-         })
-        .create();
-        	
+
     	}
         	
     	return null;
@@ -392,10 +363,6 @@ public class AllAround extends Activity {
 			dbh.removeActivityBackground("main");
 			
 	    	return true;  
-		case R.id.menuImport:
-			Intent importIntent = new Intent(cntx, Import.class);
-	        startActivity(importIntent);
-			return true;
 		default:
 			return super.onOptionsItemSelected(item);    
 		}
@@ -427,7 +394,7 @@ public class AllAround extends Activity {
 
 	public String getRealPathFromURI(Uri contentUri) {
 	    String[] proj = { MediaStore.Images.Media.DATA }; 
-	    Cursor cursor = managedQuery(contentUri, proj, null, null, null);       
+	    Cursor cursor = this.getContentResolver().query(contentUri, proj, null, null, null);       
 	    int column_index  = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
 	    cursor.moveToFirst();
 	    return cursor.getString(column_index);   

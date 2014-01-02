@@ -21,6 +21,7 @@ Version: 3.0
 Description: an attempt to normalize the location of string resources
 Changes:
 12/31/2013: created header data
+1/2/2014: Added strings for refactoring of new implementation
 -->
 <resources>
     <string name="hello">All Around Gymnastics</string>
@@ -29,4 +30,64 @@ Changes:
     
     
     <string name="gymnasts">gymnasts</string>
+    <string name="nameString">Name</string>
+    <string name="eventString">Event</string>
+    
+    <string name="helpString">Help</string>
+    <string name="addString">Add</string>
+    <string name="editString">Edit</string>
+    <string name="deleteString">Delete</string>
+    <string name="saveString">Save</string>
+    <string name="exitString">Exit</string>
+    <string name="disclaimer">By using this app, the user assumes all risk. No warranties are made.</string>
+    
+    <string name="idString">ID  </string>
+    <string name="firstNameStringPipe">|First Name</string>
+    <string name="lastNameStringPipe">|Last Name</string>
+    <string name="levelStringPipe">|Level</string>
+    <string name="targetStringPipe">|Target</string>
+    
+    <string name="nameStringPipe">|Name</string>
+    <string name="dateStringPipe">|Date</string>
+    <string name="gymnastsStringPipe">|Gymnasts</string>
+    
+    
+    <string name="gymnastStringScore">Gymnast</string>
+    <string name="floorStringScore">| Floor</string>
+    <string name="vaultStringScore">| Vault</string>
+    <string name="barsStringScore">| Bars</string>
+    <string name="beamStringScore">| String</string>
+    <string name="totalStringScore">| Total</string>
+    <string name="targetStringScore">| Target</string>
+    
+        
+    <string name="firstNameString">First Name</string>
+    <string name="lastNameString">Last Name</string>
+    <string name="levelString">Level</string>
+    <string name="targetString">Target</string>
+    <string name="defaultTargetString">35.0</string>
+    
+    <string name="setBackgroundString">Set Background</string>
+    <string name="removeBackgroundString">Remove Background</string>
+    <string name="viewChartsString">View Charts</string>
+    
+    <string name="manageGymnastsString">Manage Gymnasts</string>
+    <string name="manageMeetsString">Manage Meets</string>
+    <string name="manageScoresString">Scores and Video</string>
+    <string name="manageStatsString">Statistics and Plots</string>
+    
+    <string name="meetNameString">Meet Name</string>
+    <string name="meetDateString">Meet Date</string>
+    <string name="meetLevelString">Meet Level</string>
+    <string name="selectGymnastsString">Select Gymnasts</string>
 </resources>
+
+
+
+
+
+
+
+
+
+

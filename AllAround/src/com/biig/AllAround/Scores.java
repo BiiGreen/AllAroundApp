@@ -21,6 +21,7 @@ Description: Class designed to hold data for a gymnasts scores
 Holds: Gymnast name, Events that describe each meet and the number of meets 
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 
 package com.biig.AllAround;

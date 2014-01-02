@@ -21,6 +21,7 @@ Version: 3.0
 Description: dialog to display statistics for a gymnast based on level
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/stat_piclayout"
@@ -33,49 +34,43 @@ Changes:
 		android:orientation="vertical"
     	android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
-    	android:background="@drawable/mask_background">   
+    	android:background="@drawable/mask_background"
+    	android:layout_gravity="center" 
+		android:paddingTop="10sp">   
 		<LinearLayout
-			android:id="@+id/statsMainLayout"
-			android:layout_width="fill_parent" 
-			android:layout_height="fill_parent" 
-			android:layout_gravity="center" 
-			android:paddingTop="10sp"
-			android:orientation="vertical">
-			<LinearLayout
-				android:id="@+id/stats_ll"
+			android:id="@+id/stats_ll"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<Spinner
+				android:id="@+id/statsGymnastSpinner"
+				android:layout_width="200dp" 
+				android:layout_height="wrap_content" 
+				android:layout_gravity="center"/> 
+			<Spinner
+				android:id="@+id/statsLevelSpinner"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content" 
+				android:layout_gravity="center"/>
+		</LinearLayout> 
+		<View 
+			android:layout_width="fill_parent"
+			android:layout_height="1dp"
+			android:background="@color/solid_black"/>
+		<ScrollView
+			android:id="@+id/scrollView"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<HorizontalScrollView
+				android:id="@+id/scrollViewH"
 				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-				<Spinner
-					android:id="@+id/statsGymnastSpinner"
-					android:layout_width="200dp" 
-					android:layout_height="wrap_content" 
-					android:layout_gravity="center"/> 
-				<Spinner
-					android:id="@+id/statsLevelSpinner"
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content" 
-					android:layout_gravity="center"/>
-			</LinearLayout> 
-			<View 
-				android:layout_width="fill_parent"
-				android:layout_height="1sp"
-				android:background="@color/solid_black"/>
-			<ScrollView
-				android:id="@+id/scrollView"
-				android:layout_width="fill_parent"
-				android:layout_height="fill_parent">
-				<HorizontalScrollView
-					android:id="@+id/scrollViewH"
-					android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+				<TableLayout
+					android:id="@+id/statsTableView"
+					android:layout_width="wrap_content"
 					android:layout_height="fill_parent">
-					<TableLayout
-						android:id="@+id/statsTableView"
-						android:layout_width="fill_parent"
-						android:layout_height="fill_parent">
-					</TableLayout>
-				</HorizontalScrollView>
-			 </ScrollView>
-		</LinearLayout>
+				</TableLayout>
+			</HorizontalScrollView>
+		 </ScrollView>
 	</LinearLayout>
 </LinearLayout>

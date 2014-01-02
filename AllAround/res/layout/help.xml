@@ -21,11 +21,12 @@ Version: 3.0
 Description: this file shows the text used to help user
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
     android:background="@drawable/mask_background">
 	<LinearLayout 
 		android:id="@+id/LinearLayout01" 
@@ -34,7 +35,7 @@ Changes:
 		android:gravity="center_horizontal">
 		<Button 
 			android:id="@+id/help_exitBtn" 
-			android:text="Exit" 
+			android:text="@string/exitString"
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content">
 		</Button>
@@ -43,12 +44,12 @@ Changes:
 		android:id="@+id/ScrollView01" 
 		android:layout_height="wrap_content" 
 		android:layout_width="fill_parent">
-		<TextView 
+		<EditText 
 			android:id="@+id/help_mainText" 
-			android:layout_width="fill_parent" 
+			android:layout_width="match_parent" 
 			android:layout_height="wrap_content" 
 			android:text="@string/hello" 
 			android:textColor="@color/solid_black" 
-			android:inputType="textMultiLine"/>
+			android:inputType= "textMultiLine"/>
 	</ScrollView>
 </LinearLayout>

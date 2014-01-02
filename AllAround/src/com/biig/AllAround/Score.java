@@ -20,12 +20,15 @@ Version: 3.0
 Description: Activity to manage the scoring/video editing.
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 
 package com.biig.AllAround;
 
 
 import java.util.Arrays;
+import java.util.Locale;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -51,6 +54,7 @@ import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
 import com.biig.android.AllAround.R;
 
 public class Score extends Activity{
@@ -195,7 +199,6 @@ public class Score extends Activity{
 	    			}
 	    		}
 	    	}
-	    	
 	    }
     };
     
@@ -310,11 +313,11 @@ public class Score extends Activity{
 			t7.setTextSize(24);
 			r.addView(t7);
 			
-			tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+			tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 			
 			View v = new View(cntx);
 			v.setPadding(0, 2, 0, 2);
-			v.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,2));
+			v.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,2));
 			v.setBackgroundColor(Color.BLACK);
 			tbl.addView(v);
 			
@@ -405,11 +408,11 @@ public class Score extends Activity{
 			t7.setTextSize(24);
     		r.addView(t7);
     		
-    		tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+    		tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     		
     		View v = new View(cntx);
     		v.setPadding(0, 2, 0, 2);
-    		v.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,2));
+    		v.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,2));
     		v.setBackgroundColor(Color.BLACK);
     		tbl.addView(v);
     	}
@@ -423,7 +426,7 @@ public class Score extends Activity{
         			dbh.getMeetLevel(meetID) + "_" +
         			gymnast.replaceAll(" ", "") + "_" + anEvent + ".mp4";
     	tv.setTag(tv.getTag().toString() + ":" + s);
-    	if (dbh.checkVideo(s)){tv.setBackgroundColor(R.color.solid_green);}        
+    	if (dbh.checkVideo(s)){tv.setBackgroundColor(getResources().getColor(R.color.solid_green ));}        
     }
     
 
@@ -522,7 +525,7 @@ public class Score extends Activity{
     		
     		if (g!="None"){
     			if (e!="None"){
-	    			e = e.toLowerCase();
+	    			e = e.toLowerCase(Locale.US );
 
 	        		String s = dbh.getMeetName(meetID).replaceAll(" ", "") + "_" +
 	    			dbh.getMeetDate(meetID)+ "_" +

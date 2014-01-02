@@ -21,6 +21,7 @@ Description: Activity designed to let user set a score for a gymnast
 using the widget for that widgets meet.
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 
 package com.biig.AllAround;

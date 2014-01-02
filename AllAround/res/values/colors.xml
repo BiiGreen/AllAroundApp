@@ -21,6 +21,7 @@ Version: 3.0
 Description: resource to hold color or translucent effects
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <resources>
     <drawable name="red">#7f00</drawable>

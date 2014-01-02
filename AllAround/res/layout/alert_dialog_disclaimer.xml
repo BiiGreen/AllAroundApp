@@ -20,6 +20,7 @@ Filename: alert_dialog_disclaimer.xml
 Version: 3.0
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,10 +32,8 @@ Changes:
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
-        android:text="By using this app, the user assumes all risk. No warranties are made."
+        android:text="@string/disclaimer"
         android:textAppearance="?android:attr/textAppearanceMedium" 
         android:layout_gravity="center" 
         android:layout_width="fill_parent"/>
-   
-		
 </LinearLayout>

@@ -21,6 +21,7 @@ Description: Provider for the widget to set the interaction with the display
 when the user updates a widget
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 
 package com.biig.AllAround;

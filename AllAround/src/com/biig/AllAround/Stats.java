@@ -20,6 +20,7 @@ Version: 3.0
 Description: Activity to allow users to evaluate statistics for a gymnast
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 
 package com.biig.AllAround;
@@ -394,11 +395,11 @@ public class Stats extends Activity{
 		t5.setTextSize(dfltTxtSize);
 		r.addView(t5);
 	
-		tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+		tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		
 		View v = new View(cntx);
 		v.setPadding(0, 2, 0, 2);
-		v.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,2));
+		v.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,2));
 		v.setBackgroundColor(Color.BLACK);
 		tbl.addView(v);
     }
@@ -449,11 +450,11 @@ public class Stats extends Activity{
 		t5.setTextSize(dfltTxtSize);
 		r.addView(t5);
 	
-		tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+		tbl.addView(r,new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		
 		View v = new View(cntx);
 		v.setPadding(0, 2, 0, 2);
-		v.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,2));
+		v.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,2));
 		v.setBackgroundColor(Color.BLACK);
 		tbl.addView(v);
     }

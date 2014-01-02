@@ -21,6 +21,7 @@ Version: 3.0
 Description: tools used to collect and display scores/videos for gymnasts in a meet
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/score_piclayout"
@@ -34,15 +35,8 @@ Changes:
     	android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
     	android:background="@drawable/mask_background">
-    <LinearLayout
-    	android:id="@+id/scoreMainToolBar"
-    	android:orientation="horizontal"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content">
-    	
-	    	
 	    <LinearLayout
-	    	android:id="@+id/scoreSpinLayout1"
+	    	android:id="@+id/scoreMainToolBar"
 	    	android:orientation="horizontal"
 	    	android:layout_width="fill_parent"
 	    	android:layout_height="wrap_content">
@@ -74,89 +68,83 @@ Changes:
 				android:layout_height="50dp"
 				android:background="@drawable/add_button_states"/>
 		</LinearLayout>
-	</LinearLayout>
 		
 		
 		
 		
-			<ScrollView
-				android:id="@+id/scrollView"
-				android:layout_width="fill_parent"
-				android:layout_height="fill_parent"
-				android:paddingTop="10sp"
-				android:paddingLeft="2sp">
+		<ScrollView
+			android:id="@+id/scrollView"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:paddingTop="10sp"
+			android:paddingLeft="2sp">
 			<HorizontalScrollView
 				android:id="@+id/hScrollView"
 				android:layout_width="fill_parent"
-				android:layout_height="fill_parent">
-				<LinearLayout
-					android:id="@+id/scoreMainReportArea"
-					android:layout_width="fill_parent" 
-					android:layout_height="fill_parent"
-					android:orientation="vertical"> 
-					<TableLayout
-						android:id="@+id/scoreTableLayout"
-						android:layout_width="fill_parent"
-						android:layout_height="fill_parent">
-						<TableRow
-							android:id="@+id/scoreHeadderRow"
-							android:layout_width="fill_parent">
-							<TextView
-								android:id="@+id/scoreGymnastTV"
-								android:textColor="@color/solid_black"
-								android:layout_width="fill_parent"
-								android:layout_gravity="center"
-								android:textStyle="bold"
-								android:text="Gymnast"/>
-							<TextView
-								android:id="@+id/scoreFloorTV"
-								android:textColor="@color/solid_black"
-								android:layout_width="fill_parent"
-								android:layout_gravity="center"
-								android:textStyle="bold"
-								android:text="| Floor  "/>
-							<TextView
-								android:id="@+id/scoreVaultTV"
-								android:textColor="@color/solid_black"
-								android:layout_width="fill_parent"
-								android:layout_gravity="center"
-								android:textStyle="bold"
-								android:text="| Vault  "/>
-							<TextView
-								android:id="@+id/scoreBarsTV"
-								android:textColor="@color/solid_black"
-								android:layout_width="fill_parent"
-								android:layout_gravity="center"
-								android:textStyle="bold"
-								android:text="| Bars  "/>
-							<TextView
-								android:id="@+id/scoreBeamTV"
-								android:textColor="@color/solid_black"
-								android:layout_width="fill_parent"
-								android:layout_gravity="center"
-								android:textStyle="bold"
-								android:text="| Beam  "/>
-							<TextView
-								android:id="@+id/scoreAllAroundTV"
-								android:textColor="@color/solid_black"
-								android:layout_width="fill_parent"
-								android:layout_gravity="center"
-								android:textStyle="bold"
-								android:text="| Total  "/>
-							<TextView
-								android:id="@+id/scoreTargetTV"
-								android:textColor="@color/solid_black"
-								android:layout_width="fill_parent"
-								android:layout_gravity="center"
-								android:textStyle="bold"
-								android:text="| Target"/>
-						</TableRow>
-						<View
-							android:layout_height="2dp"
+				android:layout_height="wrap_content">
+
+				<TableLayout
+					android:id="@+id/scoreTableLayout"
+					android:layout_width="wrap_content"
+					android:layout_height="fill_parent">
+					<TableRow
+						android:id="@+id/scoreHeadderRow"
+						android:layout_width="fill_parent">
+						<TextView
+							android:id="@+id/scoreGymnastTV"
+							android:textColor="@color/solid_black"
 							android:layout_width="fill_parent"
-							android:background="@color/solid_black"/>
-					</TableLayout>
-				</LinearLayout>
+							android:layout_gravity="center"
+							android:textStyle="bold"
+							android:text="@string/gymnastStringScore"/>
+						<TextView
+							android:id="@+id/scoreFloorTV"
+							android:textColor="@color/solid_black"
+							android:layout_width="fill_parent"
+							android:layout_gravity="center"
+							android:textStyle="bold"
+							android:text="@string/floorStringScore"/>
+						<TextView
+							android:id="@+id/scoreVaultTV"
+							android:textColor="@color/solid_black"
+							android:layout_width="fill_parent"
+							android:layout_gravity="center"
+							android:textStyle="bold"
+							android:text="@string/vaultStringScore"/>
+						<TextView
+							android:id="@+id/scoreBarsTV"
+							android:textColor="@color/solid_black"
+							android:layout_width="fill_parent"
+							android:layout_gravity="center"
+							android:textStyle="bold"
+							android:text="@string/barsStringScore"/>
+						<TextView
+							android:id="@+id/scoreBeamTV"
+							android:textColor="@color/solid_black"
+							android:layout_width="fill_parent"
+							android:layout_gravity="center"
+							android:textStyle="bold"
+							android:text="@string/beamStringScore"/>
+						<TextView
+							android:id="@+id/scoreAllAroundTV"
+							android:textColor="@color/solid_black"
+							android:layout_width="fill_parent"
+							android:layout_gravity="center"
+							android:textStyle="bold"
+							android:text="@string/totalStringScore"/>
+						<TextView
+							android:id="@+id/scoreTargetTV"
+							android:textColor="@color/solid_black"
+							android:layout_width="fill_parent"
+							android:layout_gravity="center"
+							android:textStyle="bold"
+							android:text="@string/targetStringScore"/>
+					</TableRow>
+					<View
+						android:layout_height="2dp"
+						android:layout_width="fill_parent"
+						android:background="@color/solid_black"/>
+				</TableLayout>
 			</HorizontalScrollView>
 		</ScrollView>
 	</LinearLayout>		

@@ -21,6 +21,7 @@ Description: Data structure to keep data for a gymnast
 Holds: unique id, first name, last name, current level, target score
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 package com.biig.AllAround;
 

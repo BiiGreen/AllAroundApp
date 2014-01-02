@@ -21,6 +21,7 @@ Description: Sort of like hamburger helper... but for a SQL database!
 contains the main routines to write, read, etc... from the SQL database
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 package com.biig.AllAround;
 

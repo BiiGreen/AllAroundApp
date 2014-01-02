@@ -20,6 +20,7 @@ Version: 3.0
 Description: Activity used to capture and relate video to an event for a gymnast
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 package com.biig.AllAround;
 
@@ -124,7 +125,7 @@ public class ManageVideo extends Activity{
     //routine to get the file path from the activity result of recording new video
     public String getRealPathFromURI(Uri contentUri) {
     	String[] proj = { MediaStore.Images.Media.DATA }; 
-    	Cursor cursor = managedQuery(contentUri, proj, null, null, null);       
+    	Cursor cursor = this.getContentResolver().query(contentUri, proj, null, null, null);       
     	int column_index  = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
     	cursor.moveToFirst();
     	return cursor.getString(column_index);   

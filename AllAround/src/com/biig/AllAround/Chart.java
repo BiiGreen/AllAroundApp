@@ -20,6 +20,7 @@ Version: 3.0
 Description: allows the user to see plots of scores over time
 Changes:
 12/31/2013: created header data
+1/2/2014: re-factoring of new implementation
 */
 package com.biig.AllAround;
 

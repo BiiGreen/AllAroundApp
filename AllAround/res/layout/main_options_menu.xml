@@ -21,13 +21,12 @@ Version: 3.0
 Description: used to show options when user presses menu from main app window
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 
-	<menu xmlns:android="http://schemas.android.com/apk/res/android">
-	    <item android:id="@+id/menuSet"
-	          android:title="Set Background" />
-	    <item android:id="@+id/menuRemove"
-	          android:title="Remove Background" />
-	    <item android:id="@+id/menuImport"
-	          android:title="Import Old Database" />
-	</menu>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menuSet"
+          android:title="@string/setBackgroundString" />
+    <item android:id="@+id/menuRemove"
+          android:title="@string/removeBackgroundString" />
+</menu>

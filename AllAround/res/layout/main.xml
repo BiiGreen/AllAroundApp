@@ -21,12 +21,14 @@ Version: 3.0
 Description: the main app window providing access to the objects
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/main_piclayout"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">  
+    android:layout_height="fill_parent"
+    android:background="@drawable/mask_background">  
 	<LinearLayout
 		android:id="@+id/gymnastOpcLayout"
 		android:orientation="vertical"
@@ -40,14 +42,13 @@ Changes:
 		    android:gravity="center"
 		    android:textColor="@color/solid_black"
 		    android:textStyle="bold"
-		    android:textSize="15sp"/> 
-		    
+		    android:textSize="15sp"/>   
 		<ScrollView
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent">
 		<LinearLayout
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
+			android:layout_height="wrap_content"
 			android:orientation="vertical">
 		<LinearLayout
 			android:id="@+id/mainBtnLayout"
@@ -64,19 +65,14 @@ Changes:
 			<TextView  
 				    android:layout_width="wrap_content" 
 				    android:layout_height="wrap_content" 
-			    	android:text="Manage Gymnasts"
+			    	android:text="@string/manageGymnastsString"
 				    android:gravity="center"
 				    android:textColor="@color/solid_black"
 				    android:textStyle="bold"
-				    android:textSize="10sp"/>
-		</LinearLayout>
-		
-		
-		
-						
-						
+				    android:textSize="12sp"/>
+		</LinearLayout>	
 		<LinearLayout
-			android:id="@+id/mainBtnLayout"
+			android:id="@+id/scndBtnLayout"
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
@@ -89,16 +85,12 @@ Changes:
 			<TextView  
 				android:layout_width="100dp" 
 				android:layout_height="fill_parent" 
-				android:text="Manage Meets"
+				android:text="@string/manageMeetsString"
 			    android:gravity="center"
 				android:textColor="@color/solid_black"
 				android:textStyle="bold"
-				android:textSize="10sp"/>
+				android:textSize="12sp"/>
 		</LinearLayout>
-			
-			
-			
-			
 		<LinearLayout
 			android:id="@+id/thrdBtnLayout"
 			android:layout_width="wrap_content" 
@@ -113,14 +105,12 @@ Changes:
 			<TextView  
 			    android:layout_width="125dp" 
 			    android:layout_height="fill_parent" 
-			    android:text="Scores and Video"
+			    android:text="@string/manageScoresString"
 			    android:gravity="center"
 			    android:textColor="@color/solid_black"
 			    android:textStyle="bold"
-			    android:textSize="10sp"/>
+			    android:textSize="12sp"/>
 		</LinearLayout>
-			
-			
 		<LinearLayout
 			android:id="@+id/frthBtnLayout"
 			android:layout_width="wrap_content" 
@@ -135,15 +125,12 @@ Changes:
 			<TextView  
 			    android:layout_width="125dp" 
 			    android:layout_height="fill_parent" 
-			    android:text="Statistics and Plots"
+			    android:text="@string/manageStatsString"
 			    android:gravity="center"
 			    android:textColor="@color/solid_black"
 			    android:textStyle="bold"
-			    android:textSize="10sp"/>
+			    android:textSize="12sp"/>
 		</LinearLayout>
-			
-			
-			
 		<LinearLayout
 			android:id="@+id/fifthBtnLayout"
 			android:layout_width="wrap_content" 
@@ -158,11 +145,11 @@ Changes:
 			<TextView  
 			    android:layout_width="fill_parent" 
 			    android:layout_height="fill_parent" 
-			    android:text="Help"
+			    android:text="@string/helpString"
 			    android:gravity="center"
 			    android:textColor="@color/solid_black"
 			    android:textStyle="bold"
-			    android:textSize="10sp"/>
+			    android:textSize="12sp"/>
 		</LinearLayout>
 		</LinearLayout>
 		</ScrollView>

@@ -21,28 +21,25 @@ Version: 3.0
 Description: combo box used to select the meet to be used by widget.
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/WidgetLayout" 
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:scrollbars="vertical" 
-    android:scrollbarSize="5dp" 
-    android:scrollbarStyle="insideOverlay">
-	<ScrollView 
-		android:id="@+id/ScrollView01" 
-		android:layout_height="fill_parent" 
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ScrollView01" 
+	android:layout_height="fill_parent" 
+	android:layout_width="fill_parent"
+	android:scrollbarStyle="insideOverlay"
+	android:scrollbars="vertical" 
+   	android:scrollbarSize="5dp" >
+	<LinearLayout 
+		android:id="@+id/LinearLayout03" 
+		android:layout_height="wrap_content"
+		android:orientation="vertical" 
 		android:layout_width="fill_parent">
-		<LinearLayout 
-			android:id="@+id/LinearLayout03" 
-			android:layout_height="wrap_content"
-			android:orientation="vertical" 
-			android:layout_width="fill_parent">
-			<Spinner
-				android:id="@+id/widgetMeetSpinner"
-				android:layout_width="fill_parent"
-				android:layout_height="fill_parent"/>
-		</LinearLayout>
-	</ScrollView>
-</LinearLayout>
+		<Spinner
+			android:id="@+id/widgetMeetSpinner"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"/>
+	</LinearLayout>
+</ScrollView>
+

@@ -21,6 +21,7 @@ Version: 3.0
 Description: contains the tools used to define a meet object
 Changes:
 12/31/2013: created header data
+1/2/2014: refactoring of new implementation
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/meet_piclayout"
@@ -53,7 +54,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Add"/>
+						android:text="@string/addString"/>
 				<Button android:id="@+id/meetAdd"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -72,7 +73,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Edit"/>
+						android:text="@string/editString"/>
 				<Button android:id="@+id/meetEdit"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -91,7 +92,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Delete"/>
+						android:text="@string/deleteString"/>
 				<Button android:id="@+id/meetDelete"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -110,7 +111,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Save"/>
+						android:text="@string/saveString"/>
 				<Button android:id="@+id/meetCommit"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -129,7 +130,7 @@ Changes:
 						android:textColor="@color/solid_black"
 						android:textStyle="bold"
 						android:gravity="center"
-						android:text="Exit"/>
+						android:text="@string/editString"/>
 				<Button android:id="@+id/meetCancel"
 						android:layout_width="50dp" 
 						android:layout_height="50dp" 
@@ -143,54 +144,49 @@ Changes:
 			<HorizontalScrollView
 				android:id="@+id/meetHScrollView1"
 				android:layout_width="fill_parent"
-				android:layout_height="fill_parent">
-				<LinearLayout
-					android:id="@+id/meetTxtBoxLayout"
-					android:layout_width="fill_parent" 
-					android:layout_height="fill_parent"
-					android:orientation="vertical">
-					<TableLayout
-						android:id="@+id/meetTableLayout"
+				android:layout_height="wrap_content">
+				
+				<TableLayout
+					android:id="@+id/meetTableLayout"
+					android:layout_width="wrap_content"
+					android:layout_height="fill_parent">
+					<TableRow>
+						<TextView
+							android:id="@+id/meettIdTV"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/idString"/>
+						<TextView
+							android:id="@+id/meetNameTV"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/nameStringPipe"/>
+						<TextView
+							android:id="@+id/meetDateTV"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/dateStringPipe"/>
+						<TextView
+							android:id="@+id/meetLevelTV"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/levelStringPipe"/>
+						<TextView
+							android:id="@+id/meetGymnastTV"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/solid_black"
+							android:text="@string/gymnastsStringPipe"/>
+					</TableRow>
+					<View
+						android:layout_height="2dp"
 						android:layout_width="fill_parent"
-						android:layout_height="fill_parent">
-						<TableRow>
-							<TextView
-								android:id="@+id/meettIdTV"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="ID  "/>
-							<TextView
-								android:id="@+id/meetNameTV"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="|Name"/>
-							<TextView
-								android:id="@+id/meetDateTV"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="|Date "/>
-							<TextView
-								android:id="@+id/meetLevelTV"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="|Level"/>
-							<TextView
-								android:id="@+id/meetGymnastTV"
-								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:textColor="@color/solid_black"
-								android:text="|Gymnasts"/>
-						</TableRow>
-						<View
-							android:layout_height="2dp"
-							android:layout_width="fill_parent"
-							android:background="@color/solid_black"/>
-					</TableLayout>
-				</LinearLayout>
+						android:background="@color/solid_black"/>
+				</TableLayout>
 			</HorizontalScrollView>
 		</ScrollView>
 		<ScrollView
@@ -199,31 +195,32 @@ Changes:
 			android:layout_height="fill_parent">
 			<LinearLayout
 				android:layout_width="fill_parent"
-				android:layout_height="fill_parent"
+				android:layout_height="wrap_content"
 				android:orientation="vertical">
 				<EditText
 					android:id="@+id/meetNameTxt"
 					android:layout_width="fill_parent" 
 					android:layout_height="fill_parent" 
-					android:text="Meet Name"
-					android:selectAllOnFocus="true"/>
+					android:text="@string/meetNameString"
+					android:selectAllOnFocus="true"
+					android:inputType="text"/>
 				<EditText
 					android:id="@+id/meetDateTxt"
 					android:layout_width="fill_parent" 
 					android:layout_height="fill_parent" 
-					android:text="Meet Date"
+					android:text="@string/meetDateString"
 					android:selectAllOnFocus="true"
 					android:inputType="date"/>
 				<EditText
 					android:id="@+id/meetLevelTxt"
 					android:layout_width="fill_parent" 
 					android:layout_height="fill_parent" 
-					android:text="Meet Level"
+					android:text="@string/meetLevelString"
 					android:selectAllOnFocus="true"
 					android:inputType="number"/>
 				<Button android:id="@+id/meetGymnasts"
-						android:text="Select Gymnasts"
-						android:textSize="10sp"
+						android:text="@string/selectGymnastsString"
+						android:textSize="12sp"
 						android:layout_width="wrap_content" 
 						android:layout_height="fill_parent" 
 						android:layout_gravity="center_horizontal"/>
@@ -231,7 +228,7 @@ Changes:
 					android:id="@+id/meetGymnastsTv"
 					android:layout_width="fill_parent" 
 					android:layout_height="fill_parent" 
-					android:text="Select Gymnasts"
+					android:text="@string/selectGymnastsString"
 					android:textColor="@color/solid_black"
 				   	android:textStyle="bold"
 				   	android:textSize="15sp"/>
