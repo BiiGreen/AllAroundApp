@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 2009-2014 Michael Kohler.
+
+This file is part of AllAroundScore.
+
+    AllAroundScore is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    AllAroundScore is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with AllAroundScore.  If not, see <http://www.gnu.org/licenses/>.
+
+Filename: gymnast.xml
+Version: 3.0
+Description: contains the tools used to define a gymnast object
+Changes:
+12/31/2013: created header data
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/gymnast_piclayout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gymnast1"> 
+	<LinearLayout
+		android:id="@+id/gymnastOpcLayout"
+		android:orientation="vertical"
+    	android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+    	android:background="@drawable/mask_background">
+ 		<LinearLayout
+			android:id="@+id/gymnastBtnLayout"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" 
+			android:layout_gravity="center" 
+			android:paddingTop="20sp">
+			<LinearLayout
+				android:id="@+id/gymnastLL1"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/gymnastTV1"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Add"/>
+				<Button android:id="@+id/gymnastAdd"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/add_button_states"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/gymnastLL2"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/gymnastTV2"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Edit"/>
+				<Button android:id="@+id/gymnastEdit"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/edit_button_states"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/gymnastLL3"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/gymnastTV3"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Delete"/>
+				<Button android:id="@+id/gymnastDelete"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/delete_button_states"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/gymnastLL4"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/gymnastTV4"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Save"/>
+				<Button android:id="@+id/gymnastCommit"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/commit_button_states"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/gymnastLL5"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/gymnastTV5"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Exit"/>
+				<Button android:id="@+id/gymnastCancel"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/cancel_button_states"/>
+			</LinearLayout>
+		</LinearLayout>	  
+		
+		<ScrollView
+			android:id="@+id/gymnastScrollView"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<HorizontalScrollView
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<LinearLayout
+					android:id="@+id/gymnastTxtBoxLayout"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:orientation="vertical" 
+					android:paddingTop="20sp">
+				
+					<TableLayout
+						android:id="@+id/gymnastTableLayout"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content">
+						<TableRow>
+							<TextView
+								android:id="@+id/gymnastIDtv"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="ID  "/>
+							<TextView
+								android:id="@+id/gymnastFNtv"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="|First Name"/>
+							<TextView
+								android:id="@+id/gymnastLNtv"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="|Last Name"/>
+							<TextView
+								android:id="@+id/gymnastLVtv"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="|Level"/>
+							<TextView
+								android:id="@+id/gymnastTGtv"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="|Target"/>
+						</TableRow>
+						<View
+							android:layout_height="2dp"
+							android:layout_width="fill_parent"
+							android:background="@color/solid_black"/>
+					</TableLayout>
+				</LinearLayout>
+			</HorizontalScrollView>
+		</ScrollView>
+		<EditText
+			android:id="@+id/gymnastFirstNameTxt"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:text="First Name"
+			android:selectAllOnFocus="true"/>
+		<EditText
+			android:id="@+id/gymnastLastNameTxt"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:text="Last Name"
+			android:selectAllOnFocus="true"/>
+		<EditText
+			android:id="@+id/gymnastLevelTxt"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:text="Enter Level"
+			android:selectAllOnFocus="true"
+			android:inputType="number"/>
+		<TextView  
+			android:id="@+id/gymnastTargetLbl"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content" 
+			android:text="Enter Target Score"
+			android:gravity="center"
+			android:textColor="@color/solid_black"
+			android:textStyle="bold"
+			android:textSize="15sp"/>    
+		<EditText
+			android:id="@+id/gymnastTargetTxt"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			android:inputType="numberDecimal" 
+			android:text="35.0"
+			android:selectAllOnFocus="true"/>
+	</LinearLayout>
+</LinearLayout>
+

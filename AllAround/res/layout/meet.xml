@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 2009-2014 Michael Kohler.
+
+This file is part of AllAroundScore.
+
+    AllAroundScore is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    AllAroundScore is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with AllAroundScore.  If not, see <http://www.gnu.org/licenses/>.
+
+Filename: meet.xml
+Version: 3.0
+Description: contains the tools used to define a meet object
+Changes:
+12/31/2013: created header data
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/meet_piclayout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/meet1">  
+	<LinearLayout
+		android:id="@+id/gymnastOpcLayout"
+		android:orientation="vertical"
+    	android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+    	android:background="@drawable/mask_background">
+		<LinearLayout
+			android:id="@+id/meetBtnLayout"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" 
+			android:layout_gravity="center" 
+			android:paddingTop="20sp">
+			<LinearLayout
+				android:id="@+id/meetLL1"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/meetTV1"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Add"/>
+				<Button android:id="@+id/meetAdd"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/add_button_states"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/meetLL2"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/meetTV2"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Edit"/>
+				<Button android:id="@+id/meetEdit"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/edit_button_states"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/meetLL3"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/meetTV3"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Delete"/>
+				<Button android:id="@+id/meetDelete"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/delete_button_states"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/meetLL4"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/meetTV4"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Save"/>
+				<Button android:id="@+id/meetCommit"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/commit_button_states"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/meetLL5"
+				android:orientation="vertical"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingRight="10dp">
+				<TextView
+						android:id="@+id/meetTV5"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@color/solid_black"
+						android:textStyle="bold"
+						android:gravity="center"
+						android:text="Exit"/>
+				<Button android:id="@+id/meetCancel"
+						android:layout_width="50dp" 
+						android:layout_height="50dp" 
+						android:background="@drawable/cancel_button_states"/>
+			</LinearLayout>
+		</LinearLayout>	  
+		<ScrollView
+			android:id="@+id/meetScrollView1"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<HorizontalScrollView
+				android:id="@+id/meetHScrollView1"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<LinearLayout
+					android:id="@+id/meetTxtBoxLayout"
+					android:layout_width="fill_parent" 
+					android:layout_height="fill_parent"
+					android:orientation="vertical">
+					<TableLayout
+						android:id="@+id/meetTableLayout"
+						android:layout_width="fill_parent"
+						android:layout_height="fill_parent">
+						<TableRow>
+							<TextView
+								android:id="@+id/meettIdTV"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="ID  "/>
+							<TextView
+								android:id="@+id/meetNameTV"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="|Name"/>
+							<TextView
+								android:id="@+id/meetDateTV"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="|Date "/>
+							<TextView
+								android:id="@+id/meetLevelTV"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="|Level"/>
+							<TextView
+								android:id="@+id/meetGymnastTV"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:textColor="@color/solid_black"
+								android:text="|Gymnasts"/>
+						</TableRow>
+						<View
+							android:layout_height="2dp"
+							android:layout_width="fill_parent"
+							android:background="@color/solid_black"/>
+					</TableLayout>
+				</LinearLayout>
+			</HorizontalScrollView>
+		</ScrollView>
+		<ScrollView
+			android:id="@+id/meetScrollView2"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:orientation="vertical">
+				<EditText
+					android:id="@+id/meetNameTxt"
+					android:layout_width="fill_parent" 
+					android:layout_height="fill_parent" 
+					android:text="Meet Name"
+					android:selectAllOnFocus="true"/>
+				<EditText
+					android:id="@+id/meetDateTxt"
+					android:layout_width="fill_parent" 
+					android:layout_height="fill_parent" 
+					android:text="Meet Date"
+					android:selectAllOnFocus="true"
+					android:inputType="date"/>
+				<EditText
+					android:id="@+id/meetLevelTxt"
+					android:layout_width="fill_parent" 
+					android:layout_height="fill_parent" 
+					android:text="Meet Level"
+					android:selectAllOnFocus="true"
+					android:inputType="number"/>
+				<Button android:id="@+id/meetGymnasts"
+						android:text="Select Gymnasts"
+						android:textSize="10sp"
+						android:layout_width="wrap_content" 
+						android:layout_height="fill_parent" 
+						android:layout_gravity="center_horizontal"/>
+				<TextView
+					android:id="@+id/meetGymnastsTv"
+					android:layout_width="fill_parent" 
+					android:layout_height="fill_parent" 
+					android:text="Select Gymnasts"
+					android:textColor="@color/solid_black"
+				   	android:textStyle="bold"
+				   	android:textSize="15sp"/>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+</LinearLayout>

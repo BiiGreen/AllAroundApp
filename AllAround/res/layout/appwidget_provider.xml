@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 2009-2014 Michael Kohler.
+
+This file is part of AllAroundScore.
+
+    AllAroundScore is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    AllAroundScore is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with AllAroundScore.  If not, see <http://www.gnu.org/licenses/>.
+
+Filename: appwidget_provider.xml
+Version: 3.0
+Description: This xml holds the components used to work with AAS from the widget.
+Changes:
+12/31/2013: created header data
+-->
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/widgetMainLL"
+	android:orientation="vertical"
+	android:layout_width="220dp"
+	android:layout_height="72dp"
+	android:background="@drawable/translucent_background"
+	android:layout_gravity="center">
+	<TextView 
+	    android:id="@+id/appwidget_meetName"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:textColor="#ffffff"
+	    android:textSize="11sp" 
+		android:typeface="sans" 
+		android:textStyle="bold"
+		android:gravity="center"
+		android:shadowColor="@color/solid_blue"/>
+	<LinearLayout
+		android:id="@+id/widgetBtnLL1"
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:paddingLeft="5sp">
+		<Button
+			android:id="@+id/appwidget_score"
+			android:background= "@drawable/arrowup_button_states"
+			android:layout_width="50dp"
+			android:layout_height="50dp"/>
+		<Button
+			android:id="@+id/appwidget_video"
+			android:background= "@drawable/video_button_states"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_marginLeft="5dp"/>
+		<Button
+			android:id="@+id/appwidget_activity"
+			android:background= "@drawable/scores_button_states"
+			android:layout_width="45dp"
+			android:layout_height="45dp"
+			android:layout_marginLeft="5dp"/>
+		<Button
+			android:id="@+id/appwidget_app"
+			android:background="@drawable/icon_button_states"
+			android:layout_width="45dp"
+			android:layout_height="45dp"/>
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 2009-2014 Michael Kohler.
+
+This file is part of AllAroundScore.
+
+    AllAroundScore is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    AllAroundScore is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with AllAroundScore.  If not, see <http://www.gnu.org/licenses/>.
+
+Filename: database_import.xml
+Version: 3.0
+Description: this was intended to be used in the import process when converting
+to the SQL database instead of the CSV database files. Never deployed.
+THIS HAS NOT BEEN DEPLOYED AND IS PART OF THE IMPORT PROCESS THAT WAS NOT CREATED
+Changes:
+12/31/2013: created header data
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@drawable/mask_background">
+	<LinearLayout 
+		android:id="@+id/LinearLayout01" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:gravity="center_horizontal">
+		<Button 
+			android:id="@+id/importExitBtn" 
+			android:text="Exit" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</Button>
+	</LinearLayout>
+	<ScrollView 
+		android:id="@+id/importScrollView01" 
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent">
+		<LinearLayout
+			android:layout_width="fill_parent" 
+			android:layout_height="fill_parent"
+			android:orientation="vertical"> 
+			<TextView 
+				android:id="@+id/importGymnastTextView" 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="Select a Gymnast to Import" 
+				android:textColor="@color/solid_black" 
+				android:inputType="textMultiLine"
+				android:gravity="center_horizontal"/>
+			<Spinner
+				android:id="@+id/importGymnastSpinner"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" />
+			<EditText
+				android:id="@+id/importFirstNameTxt"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="First Name"
+				android:selectAllOnFocus="true"/>
+			<EditText
+				android:id="@+id/importLastNameTxt"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="Last Name"
+				android:selectAllOnFocus="true"/>
+			<EditText
+				android:id="@+id/importGymnastLevelTxt"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="Enter Level"
+				android:selectAllOnFocus="true"
+				android:inputType="number"/>
+			<Button 
+				android:id="@+id/importGymnastBtn" 
+				android:text="Import Gymnast" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal">
+			</Button>
+			
+			
+			<View
+				android:layout_height="3dp"
+				android:layout_width="fill_parent"
+				android:background="@color/solid_black"/> 
+			
+			<TextView 
+				android:id="@+id/importMeetTextView" 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="Select a Meet to Import" 
+				android:textColor="@color/solid_black" 
+				android:inputType="textMultiLine"
+				android:gravity="center_horizontal"
+				android:paddingTop="10dp"/>
+			<Spinner
+				android:id="@+id/importMeetSpinner"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" />
+
+			<EditText
+				android:id="@+id/importMeetLevelTxt"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" 
+				android:text="Enter Level"
+				android:selectAllOnFocus="true"
+				android:inputType="number"/>
+			<Button 
+				android:id="@+id/importMeetBtn" 
+				android:text="Import Meet" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal">
+			</Button>
+				
+				
+				
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

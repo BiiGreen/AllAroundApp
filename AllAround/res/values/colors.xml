@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright 2009-2014 Michael Kohler.
+
+This file is part of AllAroundScore.
+
+    AllAroundScore is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    AllAroundScore is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with AllAroundScore.  If not, see <http://www.gnu.org/licenses/>.
+
+Filename: colors.xml
+Version: 3.0
+Description: resource to hold color or translucent effects
+Changes:
+12/31/2013: created header data
+-->
+<resources>
+    <drawable name="red">#7f00</drawable>
+    <drawable name="blue">#770000ff</drawable>
+    <drawable name="green">#7700ff00</drawable>
+	<drawable name="yellow">#77ffff00</drawable>
+	<drawable name="screen_background_black">#ff000000</drawable>
+    <drawable name="translucent_background">#e0000000</drawable>
+    <drawable name="hasvideo_background">#e0ffffff</drawable>
+    <drawable name="transparent_background">#00000000</drawable>
+    <drawable name="mask_background">#afff</drawable>
+    <color name="solid_red">#f00</color>
+    <color name="solid_blue">#0000ff</color>
+    <color name="solid_green">#f0f0</color>
+    <color name="solid_yellow">#ffffff00</color>
+	<color name="solid_black">#000000</color>
+</resources>
